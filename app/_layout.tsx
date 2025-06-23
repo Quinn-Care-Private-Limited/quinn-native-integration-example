@@ -11,7 +11,7 @@ import QuinnOverlayContextProvider from "@/components/quinn-context-provider";
 import QuinnWidget from "@/components/quinn-widget";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { initApp } from "@quinninc/rn-core/config/app";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -33,6 +33,7 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <QuinnOverlayContextProvider>
         <View style={{ paddingHorizontal: 16, paddingTop: 100 }}>
+          <Text>Hello</Text>
           <QuinnWidget handle="PAGE_pageid" widgettype="cards" layer={1} />
         </View>
       </QuinnOverlayContextProvider>
