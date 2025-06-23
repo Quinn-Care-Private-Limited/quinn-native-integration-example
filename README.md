@@ -26,23 +26,9 @@ Before integrating Quinn widgets, you'll need:
 2. React Native project setup
 3. Required dependencies installed
 
-## Installation
 
-### Install Required Dependencies
 
-Install the necessary packages in your React Native project:
-
-```bash
-npm install @react-native-async-storage/async-storage react-native-video react-native-skeleton-placeholder @react-native-masked-view/masked-view react-native-linear-gradient @quinninc/rn-core
-```
-
-Or using yarn:
-
-```bash
-yarn add @react-native-async-storage/async-storage react-native-video react-native-skeleton-placeholder @react-native-masked-view/masked-view react-native-linear-gradient @quinninc/rn-core
-```
-
-## Integration Steps
+## Integrate in your own React native app
 
 ### Step 1: Create Quinn Widgets in Admin Portal
 
@@ -70,12 +56,26 @@ yarn add @react-native-async-storage/async-storage react-native-video react-nati
 
 Copy these two files from this repository to your React Native project:
 
-1. **`quinn-context-provider.tsx`** - Handles overlay functionality
-2. **`quinn-widget.tsx`** - Renders different widget types
+1. [quinn-context-provider.tsx](https://github.com/Quinn-Care-Private-Limited/quinn-native-integration-example/blob/master/components/quinn-context-provider.tsx) - Handles overlay functionality
+2. [quinn-widget.tsx](https://github.com/Quinn-Care-Private-Limited/quinn-native-integration-example/blob/master/components/quinn-widget.tsx) - Renders different widget types
 
 You can place these files anywhere in your project structure (e.g., in a `components/`, `src/components/`, or any other directory of your choice).
 
-### Step 3: Initialize Quinn App
+### Step 3: Install Required Dependencies
+
+Install the necessary packages in your React Native project:
+
+```bash
+npm install @react-native-async-storage/async-storage react-native-video react-native-skeleton-placeholder @react-native-masked-view/masked-view react-native-linear-gradient @quinninc/rn-core
+```
+
+Or using yarn:
+
+```bash
+yarn add @react-native-async-storage/async-storage react-native-video react-native-skeleton-placeholder @react-native-masked-view/masked-view react-native-linear-gradient @quinninc/rn-core
+```
+
+### Step 4: Initialize Quinn App
 
 In your root file (e.g., `App.tsx` or `index.js`), import and initialize the Quinn app **before using any Quinn components**:
 
@@ -92,7 +92,7 @@ initApp({
 
 **Important**: Make sure to initialize the app before using any Quinn components.
 
-### Step 4: Set Up Context Provider
+### Step 5: Set Up Context Provider
 
 Import and wrap your app with the Quinn overlay context provider:
 
@@ -143,7 +143,7 @@ Quinn supports three types of widgets:
 
 - **`handle`**: The widget identifier in format `{PAGE_TYPE}_{PAGE_ID}`
 - **`widgettype`**: One of `"cards"`, `"story"`, or `"floating"`
-- **`layer`**: Always use `1` for the layer parameter
+- **`layer`**: use `1` for the layer parameter
 
 ## Example Integration
 
