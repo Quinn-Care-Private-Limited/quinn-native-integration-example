@@ -26,7 +26,7 @@ function QuinnWidget({ handle, widgettype, layer }: Props) {
         />
       );
     case "floating":
-      return <Popup layer={1} playlistId={`${handle}_HANDLE_${layer}`} />;
+      return <Popup layer={1} playlistId={`${handle}_BUBBLE_${layer}`} />;
   }
 }
 
