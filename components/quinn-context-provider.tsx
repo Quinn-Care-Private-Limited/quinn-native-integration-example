@@ -5,7 +5,6 @@ import {
 } from "@quinninc/rn-core/index";
 import React, { useState } from "react";
 import { Modal } from "react-native";
-
 export const QuinnOverlayContext = React.createContext<{
   overlayData: IOpenOverlayAction | null;
   setOverlayData: React.Dispatch<
