@@ -26,11 +26,11 @@ function QuinnOverlayContextProvider({
   );
 
   AppActions.onOverlayOpen((data) => {
-    console.log(data);
     setOverlayData(data);
   });
 
   AppActions.onOverlayClose(() => {
+    console.log("overlay closed");
     setOverlayData(null);
   });
 
@@ -42,14 +42,21 @@ function QuinnOverlayContextProvider({
       }}
     >
       {children}
-      <Modal animationType="slide" visible={!!overlayData} transparent>
-        <Overlay
-          data={overlayData}
-          direction="horizontal"
-          disableGradient
-          videoResizeMode="contain"
-        />
-      </Modal>
+      {overlayData ? (
+        <Modal
+          animationType="slide"
+          visible={overlayData ? true : false}
+          transparent
+          onRequestClose={() => setOverlayData(null)}
+        >
+          <Overlay
+            data={overlayData}
+            direction="vertical"
+            disableGradient
+            videoResizeMode="contain"
+          />
+        </Modal>
+      ) : null}
     </QuinnOverlayContext.Provider>
   );
 }
