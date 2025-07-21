@@ -4,7 +4,7 @@ import {
   Overlay,
 } from "@quinninc/rn-core/index";
 import React, { useState } from "react";
-import { Modal } from "react-native";
+import { Modal, View } from "react-native";
 export const QuinnOverlayContext = React.createContext<{
   overlayData: IOpenOverlayAction | null;
   setOverlayData: React.Dispatch<
@@ -45,19 +45,23 @@ function QuinnOverlayContextProvider({
         <Modal
           animationType="slide"
           visible={overlayData ? true : false}
-          transparent
           onRequestClose={() => setOverlayData(null)}
+          statusBarTranslucent
+          style={{
+            height: "100%",
+          }}
         >
-          <Overlay
-            data={overlayData}
-            direction="vertical"
-            disableGradient
-            videoResizeMode="contain"
-          />
+          <View>
+            <Overlay
+              data={overlayData}
+              direction="vertical"
+              disableGradient
+              videoResizeMode="contain"
+            />
+          </View>
         </Modal>
       ) : null}
     </QuinnOverlayContext.Provider>
   );
 }
-
 export default QuinnOverlayContextProvider;

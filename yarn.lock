@@ -1425,10 +1425,10 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@quinninc/rn-core@0.6.87":
-  version "0.6.87"
-  resolved "https://registry.yarnpkg.com/@quinninc/rn-core/-/rn-core-0.6.87.tgz#84097e6daccb6772416f5c53a4ddfcf47f0931dd"
-  integrity sha512-BtQVXQ3v3ov71KZ7NN6Mo6YGyN2rzHJ4fZEWqlKspfXqzhmrdrr5d7x13pgyNVVhQLSoW0c5FfyvbzaZMKwUDQ==
+"@quinninc/rn-core@0.6.89":
+  version "0.6.89"
+  resolved "https://registry.yarnpkg.com/@quinninc/rn-core/-/rn-core-0.6.89.tgz#1ee929a82b84fbafc24576f2bd45af8f57222248"
+  integrity sha512-SiS4rMNPxcQfg1JiiQMq0dPnpD+0PcSgUEZiQTxy20oYZyHdJwtUJmO775ESFVgpv92fQwDoVAuFhc1xu1Y5dQ==
   dependencies:
     bash "^0.0.1"
     immer "^9.0.6"
