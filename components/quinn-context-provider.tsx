@@ -1,10 +1,10 @@
 import {
   AppActions,
   IOpenOverlayAction,
-  Overlay,
+  Overlay
 } from "@quinninc/rn-core/index";
 import React, { useState } from "react";
-import { Modal, StatusBar } from "react-native";
+import { Dimensions, Modal, StatusBar } from "react-native";
 export const QuinnOverlayContext = React.createContext<{
   overlayData: IOpenOverlayAction | null;
   setOverlayData: React.Dispatch<
@@ -33,6 +33,7 @@ function QuinnOverlayContextProvider({
     setOverlayData(null);
   });
 
+  const {height} = Dimensions.get("window");
   return (
     <QuinnOverlayContext.Provider
       value={{
@@ -45,19 +46,18 @@ function QuinnOverlayContextProvider({
         <Modal
           animationType="slide"
           statusBarTranslucent
-          style={{
-            height: "100%",
-            marginTop: StatusBar.currentHeight,
-          }}
+          
           visible={overlayData ? true : false}
           onRequestClose={() => setOverlayData(null)}
+          navigationBarTranslucent
         >
-          <Overlay
-            data={overlayData}
-            direction="vertical"
-            disableGradient
-            videoResizeMode="contain"
-          />
+            <Overlay
+              data={overlayData}
+              direction="vertical"
+              disableGradient
+              videoResizeMode="contain"
+              height={height + (StatusBar.currentHeight ? StatusBar.currentHeight : 0)}
+            />
         </Modal>
       ) : null}
     </QuinnOverlayContext.Provider>
